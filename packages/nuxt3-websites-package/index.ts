@@ -1,4 +1,4 @@
-import { defineNuxtModule } from "@nuxt/kit";
+import { addPlugin, defineNuxtModule, createResolver } from "@nuxt/kit";
 import { join } from "path";
 
 export default defineNuxtModule({
@@ -10,5 +10,10 @@ export default defineNuxtModule({
         prefix: "nx3",
       });
     });
+
+    const { resolve } = createResolver(import.meta.url);
+
+    // add the helper plugin
+    addPlugin(resolve("lib/plugins/helper.ts"));
   },
 });
