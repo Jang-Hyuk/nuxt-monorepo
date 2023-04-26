@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "website2",
   "private": true,
   "scripts": {
     "build": "nuxt build",
@@ -11,5 +11,8 @@
   "devDependencies": {
     "@types/node": "^18",
     "nuxt": "^3.4.2"
+  },
+  "dependencies": {
+    "nuxt3-websites-package": "workspace:^"
   }
 }
