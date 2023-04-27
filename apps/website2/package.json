@@ -6,13 +6,16 @@
     "dev": "nuxt dev --port=3020",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@types/node": "^18",
-    "nuxt": "^3.4.2"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
   },
   "dependencies": {
+    "@nm/tsconfig": "workspace:^",
     "@nm/ui": "workspace:^"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.1",
+    "nuxt": "^3.4.2"
   }
 }
