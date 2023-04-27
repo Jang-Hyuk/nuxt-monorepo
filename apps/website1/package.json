@@ -13,6 +13,6 @@
     "nuxt": "^3.4.2"
   },
   "dependencies": {
-    "nuxt3-websites-package": "workspace:^"
+    "@nm/ui": "workspace:^"
   }
 }

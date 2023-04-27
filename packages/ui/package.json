@@ -1,5 +1,5 @@
 {
-  "name": "nuxt3-websites-package",
+  "name": "@nm/ui",
   "version": "1.0.0",
   "description": "",
   "main": "index.ts",
