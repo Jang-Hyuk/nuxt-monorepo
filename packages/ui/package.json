@@ -7,11 +7,23 @@
   "keywords": [],
   "main": "index.ts",
   "scripts": {
+    "dev": "histoire dev",
+    "build": "histoire build",
+    "preview": "histoire preview",
+    "test": "vitest run --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@nuxt/kit": "^3.4.2",
-    "animate.css": "^4.1.1"
+    "@histoire/plugin-vue": "^0.12.4",
+    "@nm/tsconfig": "workspace:^",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitest/coverage-c8": "^0.28.3",
+    "@vue/test-utils": "^2.2.9",
+    "animate.css": "^4.1.1",
+    "c8": "^7.12.0",
+    "histoire": "^0.12.4",
+    "jsdom": "^20.0.3",
+    "vitest": "^0.28.3"
   }
 }
