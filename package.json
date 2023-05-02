@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@nm/eslint-config-custom": "workspace:*",
+    "@nm/eslint-config": "workspace:*",
     "turbo": "latest"
   }
 }

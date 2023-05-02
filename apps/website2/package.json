@@ -10,12 +10,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
-  "dependencies": {
-    "@nm/tsconfig": "workspace:^",
-    "@nm/ui": "workspace:^"
-  },
   "devDependencies": {
-    "@types/node": "^18.16.1",
-    "nuxt": "^3.4.2"
+    "@nm/ui": "workspace:^",
+    "@nm/tsconfig": "workspace:^",
+    "nuxt": "^3.4.3"
   }
 }
