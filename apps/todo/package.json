@@ -1,0 +1,19 @@
+{
+  "name": "todo",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port=3030",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint --ext \".js,.ts,.vue,.json\" --fix ."
+  },
+  "devDependencies": {
+    "@nm/tsconfig": "workspace:^",
+    "@nm/ui": "workspace:^",
+    "@pinia/nuxt": "^0.4.9",
+    "nuxt": "^3.4.3"
+  }
+}
