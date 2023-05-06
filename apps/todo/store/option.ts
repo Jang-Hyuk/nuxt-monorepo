@@ -1,5 +1,7 @@
 import { defineStore } from 'pinia'
 
+import type { TodoFlag } from '~/store/composition'
+
 export interface Todo {
   title: string
   isDone: boolean
@@ -10,8 +12,21 @@ export const useOptionStore = defineStore('option', {
   state: () => ({
     LOCAL_ID: 'optionAPI',
     todoList: [] as Todo[],
+    todoFlag: 'all' as TodoFlag,
   }),
   getters: {
+    realTodoList(state) {
+      return state.todoList.filter((todo) => {
+        if (state.todoFlag === 'all')
+          return true
+        if (todo.isDone && state.todoFlag === 'done')
+          return true
+        if (!todo.isDone && state.todoFlag === 'none')
+          return true
+
+        return false
+      })
+    },
   },
   actions: {
     addTodo(todoTitle: Todo['title']) {

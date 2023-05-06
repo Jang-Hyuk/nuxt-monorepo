@@ -3,7 +3,7 @@ import { useCompositionStore } from '~/store/composition'
 
 const props = defineProps(['todoId'])
 
-const { getTodo, updateTodo, deleteTodo } = useCompositionStore()
+const { getTodo, deleteTodo } = useCompositionStore()
 
 const todo = getTodo(props.todoId)
 </script>

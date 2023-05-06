@@ -11,11 +11,6 @@ export default defineComponent({
       default: null,
     },
   },
-  data() {
-    return {
-      key: 1,
-    }
-  },
   computed: {
     todo() {
       return this.getTodo(this.todoId)
@@ -23,17 +18,13 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useOptionStore, ['deleteTodo', 'getTodo', 'updateTodo']),
-    executeUpdate() {
-      this.todo.isDone = !this.todo.isDone
-      this.updateTodo(this.todoId, this.todo)
-    },
   },
 })
 </script>
 
 <template>
   <div>
-    완료: <input v-model="todo.isDone" type="checkbox" @click="executeUpdate"> {{ todo?.title }}
+    완료: <input v-model="todo.isDone" type="checkbox"> {{ todo?.title }}
     <button @click="deleteTodo(todoId)">
       삭제
     </button>

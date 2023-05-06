@@ -4,9 +4,23 @@ import { defineStore } from 'pinia'
 
 import type { Todo } from '~/store/option'
 
+/** all: 모두, done: 완료만, none: 미완료만 */
+export type TodoFlag = 'all' | 'done' | 'none'
+
 export const useCompositionStore = defineStore('composition', () => {
   const LOCAL_ID = 'compositionAPI'
   const todoList = ref([] as Todo[])
+  const realTodoList = computed(() => todoList.value.filter((todo) => {
+    if (todoFlag.value === 'all')
+      return true
+    if (todo.isDone && todoFlag.value === 'done')
+      return true
+    if (!todo.isDone && todoFlag.value === 'none')
+      return true
+
+    return false
+  }))
+  const todoFlag = ref('all' as TodoFlag)
 
   function addTodo(todoTitle: Todo['title']) {
     todoList.value.push({
@@ -64,6 +78,8 @@ export const useCompositionStore = defineStore('composition', () => {
 
   return {
     todoList,
+    realTodoList,
+    todoFlag,
     addTodo,
     getTodo,
     updateTodo,

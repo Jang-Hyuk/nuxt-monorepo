@@ -7,13 +7,6 @@ import type { Todo } from '~/store/option'
 import { useOptionStore } from '~/store/option'
 
 export default defineNuxtComponent({
-  setup() {
-    if (process.client) {
-      const { initTodo } = useOptionStore()
-
-      initTodo()
-    }
-  },
   components: { TodoHeader, TodoList },
   data() {
     return {
@@ -40,6 +33,9 @@ export default defineNuxtComponent({
     <input v-model="todoTitle" type="text" placeholder="입력해라 닝겐" @keyup.enter="executeAddTodo">
     <button @click="syncTodo">
       동기화
+    </button>
+    <button @click="initTodo">
+      초기화
     </button>
   </div>
   <TodoList />

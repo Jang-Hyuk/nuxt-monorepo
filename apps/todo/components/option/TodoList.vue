@@ -7,18 +7,14 @@ import { useOptionStore } from '~/store/option'
 
 export default defineComponent({
   components: { TodoItem },
-  setup() {
-    return {}
-  },
   computed: {
-    ...mapState(useOptionStore, ['todoList']),
-
+    ...mapState(useOptionStore, ['realTodoList']),
   },
 })
 </script>
 
 <template>
-  <TodoItem v-for="(item) in todoList" :key="item.id" :todo-id="item.id" />
+  <TodoItem v-for="(item) in realTodoList" :key="item.id" :todo-id="item.id" />
 </template>
 
 <style scoped>
