@@ -9,13 +9,15 @@ const { todoFlag } = storeToRefs(store)
 <template>
   <ul class="wrapper">
     <li
-      class="todoHeader" :class="{ selected: todoFlag === 'all' }"
+      class="todoHeader"
+      :class="{ selected: todoFlag === 'all' }"
       @click="todoFlag = 'all'"
     >
       모두
     </li>
     <li
-      class="todoHeader" :class="{ selected: todoFlag === 'done' }"
+      class="todoHeader"
+      :class="{ selected: todoFlag === 'done' }"
       @click="todoFlag = 'done'"
     >
       완료
@@ -36,9 +38,9 @@ const { todoFlag } = storeToRefs(store)
 
   .todoHeader {
     border: 1px solid blue;
-    background-color: aliceblue;
-    padding: 0.5rem 1rem;
-    cursor: pointer
+        background-color: aliceblue;
+          padding: 0.5rem 1rem;
+    cursor: pointer;
   }
   .selected {
     background-color: aquamarine;
