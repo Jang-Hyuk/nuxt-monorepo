@@ -70,8 +70,7 @@ export const useCompositionStore = defineStore('composition', () => {
       const storeTodoList = JSON.parse(todoListRaw)
       if (Array.isArray(storeTodoList))
         todoList.value = storeTodoList
-    }
-    catch (error) {
+    } catch (error) {
       console.error(error)
     }
   }
