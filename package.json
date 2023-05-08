@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@nm/eslint-config": "workspace:*",
+    "@nm/eslint-config-antfu": "workspace:*",
     "@nm/stylelint-config": "workspace:^",
     "lodash": "^4.17.21",
     "turbo": "latest"

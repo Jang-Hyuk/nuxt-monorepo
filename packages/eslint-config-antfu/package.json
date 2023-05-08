@@ -1,0 +1,16 @@
+{
+  "name": "@nm/eslint-config-antfu",
+  "version": "0.0.0",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.38.5",
+    "eslint": "^8.39.0",
+    "eslint-config-turbo": "latest",
+    "typescript": "^5.0.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

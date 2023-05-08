@@ -1,7 +1,7 @@
 {
   "root": true,
   // This tells ESLint to load the config from the package `eslint`
-  "extends": ["@nm/eslint-config"],
+  "extends": ["@nm/eslint-config-antfu"],
   "settings": {
     "next": {
       "rootDir": ["apps/*/"]
