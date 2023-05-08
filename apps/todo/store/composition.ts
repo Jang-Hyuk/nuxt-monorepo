@@ -10,6 +10,7 @@ export type TodoFlag = 'all' | 'done' | 'none'
 export const useCompositionStore = defineStore('composition', () => {
   const LOCAL_ID = 'compositionAPI'
   const todoList = ref([] as Todo[])
+  const todoFlag = ref('all' as TodoFlag)
   const realTodoList = computed(() => todoList.value.filter((todo) => {
     if (todoFlag.value === 'all')
       return true
@@ -20,7 +21,6 @@ export const useCompositionStore = defineStore('composition', () => {
 
     return false
   }))
-  const todoFlag = ref('all' as TodoFlag)
 
   function addTodo(todoTitle: Todo['title']) {
     todoList.value.push({
@@ -70,7 +70,8 @@ export const useCompositionStore = defineStore('composition', () => {
       const storeTodoList = JSON.parse(todoListRaw)
       if (Array.isArray(storeTodoList))
         todoList.value = storeTodoList
-    } catch (error) {
+    }
+    catch (error) {
       console.error(error)
     }
   }

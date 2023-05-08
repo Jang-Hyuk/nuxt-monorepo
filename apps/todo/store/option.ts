@@ -72,7 +72,8 @@ export const useOptionStore = defineStore('option', {
         const todoList = JSON.parse(todoListRaw)
         if (Array.isArray(todoList))
           this.todoList = todoList
-      } catch (error) {
+      }
+      catch (error) {
         console.error(error)
       }
     },
