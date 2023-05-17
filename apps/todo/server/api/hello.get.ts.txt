@@ -1,0 +1,6 @@
+export default defineEventHandler((event) => {
+  return {
+    ...event.context,
+    api: 'works',
+  }
+})

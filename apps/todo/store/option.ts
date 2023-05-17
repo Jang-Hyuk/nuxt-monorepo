@@ -8,6 +8,11 @@ export interface Todo {
   id: number
 }
 
+switch ('1') {
+  case '1':
+    break
+}
+
 export const useOptionStore = defineStore('option', {
   state: () => ({
     LOCAL_ID: 'optionAPI',
@@ -27,6 +32,25 @@ export const useOptionStore = defineStore('option', {
         return false
       })
     },
+    getterSubNavigationList: state =>
+      (mainPath = '', subPath = '') => {
+        // 메인 네비게이션 조회
+        const mainNaviInfo = state.navigationList.find(
+          naviInfo => naviInfo.path === mainPath,
+        )
+
+        // 첫번재 서브 네비게이션 메뉴가 존재하지 않을 경우
+        if (mainNaviInfo === undefined)
+          return []
+
+        // 서브 네비게이션 Path가 존재하지 않는다면 현재 시점의 링크 반환
+        if (!subPath.length)
+          return mainNaviInfo.links
+
+        const subNaviInfo = _.find(mainNaviInfo.links, { path: subPath })
+
+        return subNaviInfo === undefined ? [] : subNaviInfo
+      },
   },
   actions: {
     addTodo(todoTitle: Todo['title']) {
