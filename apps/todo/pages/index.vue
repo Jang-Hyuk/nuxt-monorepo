@@ -1,15 +1,18 @@
 <script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
+export default defineNuxtComponent({
   setup() {
     return {}
   },
+  // middleware: ['test-middleware'],
 })
 </script>
 
 <template>
-  <div>허허</div>
+  <div>
+    <NuxtLink :to="{ name: 'page-id', params: { id: 1 } }">
+      동적 페이지로 쑝
+    </NuxtLink>
+  </div>
 </template>
 
 <style scoped>

@@ -28,17 +28,19 @@ export default defineNuxtComponent({
 </script>
 
 <template>
-  <TodoHeader />
-  <div>
-    <input v-model="todoTitle" type="text" placeholder="입력해라 닝겐" @keyup.enter="executeAddTodo">
-    <button @click="syncTodo">
-      동기화
-    </button>
-    <button @click="initTodo">
-      초기화
-    </button>
-  </div>
-  <TodoList />
+  <NuxtLayout name="second-layout">
+    <TodoHeader />
+    <div>
+      <input v-model="todoTitle" type="text" placeholder="입력해라 닝겐" @keyup.enter="executeAddTodo">
+      <button @click="syncTodo">
+        동기화
+      </button>
+      <button @click="initTodo">
+        초기화
+      </button>
+    </div>
+    <TodoList />
+  </NuxtLayout>
 </template>
 
 <style scoped>

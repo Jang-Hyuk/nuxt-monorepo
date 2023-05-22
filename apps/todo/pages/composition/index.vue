@@ -17,11 +17,14 @@ function executeAddTodo() {
   addTodo(todoTitle.value)
   todoTitle.value = ''
 }
+
+const foo = useFoo()
 </script>
 
 <template>
   <TodoHeader />
   <div>
+    {{ foo }}
     <input v-model="todoTitle" type="text" placeholder="컴포지션 할일을 입력해 닝겐!" @keyup.enter="executeAddTodo">
     <button @click="syncTodo">
       동기화
@@ -29,6 +32,7 @@ function executeAddTodo() {
     <button @click="initTodo">
       초기화
     </button>
+    {{ $hello('welcome plugin') }}
   </div>
   <TodoList />
 </template>
