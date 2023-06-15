@@ -16,12 +16,12 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
   },
-  plugins: ['vue', '@typescript-eslint'],
+  plugins: ['vue', 'jsdoc', '@typescript-eslint'],
   rules: {
     // Common
-    semi: ['error', 'never'],
-    curly: ['error', 'multi-or-nest', 'consistent'],
-    quotes: ['error', 'single'],
+    'semi': ['error', 'never'],
+    'curly': ['error', 'multi-or-nest', 'consistent'],
+    'quotes': ['error', 'single'],
     'comma-dangle': ['error', 'always-multiline'],
     'space-before-function-paren': [
       'error',
@@ -31,7 +31,7 @@ module.exports = {
         asyncArrow: 'always',
       },
     ],
-    indent: ['error', 2],
+    'indent': ['error', 2],
     'no-multi-spaces': ['error'],
     'no-unused-vars': [
       'error',
@@ -47,5 +47,8 @@ module.exports = {
     'vue/prefer-import-from-vue': 'off',
     'vue/no-v-text-v-html-on-component': 'off',
     'vue/no-multiple-template-root': 'off',
+
+    // Jsdoc
+    'jsdoc/check-alignment': 1,
   },
 }

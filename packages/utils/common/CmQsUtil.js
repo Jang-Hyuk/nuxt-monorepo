@@ -1,26 +1,26 @@
 export default class CmQsUtil {
   /**
-     * @see {@link CmQsUtil.stringify} use
-     * 객체 또는 사전 자료형을 location.search 형태로 반환
-     * pathname이 존재할 경우 pathname + search 형태로 반환
-     * @param {Object} obj 속성을 키/값 문자열로 구문 분석할 개체
-     * @param {string} [pathname = '/'] location.pathname
-     * @param {string} [delimiter = '&'] 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '&'는 쌍 구분자
-     * @param {string} [eq = '='] 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '='는 쌍 구분자
-     * @returns location search 형태
-     * @example
-     * // === obj: {arr: ['1', '2'], sSex: 'f'}
-     * stringify(obj); // => 'arr=1&arr=2&sSex=f'
-     * stringify(obj, '|', '='); // => 'arr=1|arr=2|sSex=f'
-     */
+   * @see {@link CmQsUtil.stringify} use
+   * 객체 또는 사전 자료형을 location.search 형태로 반환
+   * pathname이 존재할 경우 pathname + search 형태로 반환
+   * @param {Object} obj 속성을 키/값 문자열로 구문 분석할 개체
+   * @param {string} [pathname = '/'] location.pathname
+   * @param {string} [delimiter = '&'] 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '&'는 쌍 구분자
+   * @param {string} [eq = '='] 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '='는 쌍 구분자
+   * @returns location search 형태
+   * @example
+   * // === obj: {arr: ['1', '2'], sSex: 'f'}
+   * stringify(obj); // => 'arr=1&arr=2&sSex=f'
+   * stringify(obj, '|', '='); // => 'arr=1|arr=2|sSex=f'
+   */
   createLocationSearch(obj, pathname = '/', delimiter = '&', eq = '=') {
     return `${pathname}?${this.stringify(obj, delimiter, eq)}`
   }
 
   /**
-     * encodeURIComponent를 통해서 만들어진 문자열을 이스케이핑을 이용하여 디코드
-     * @param {string} v
-     */
+   * encodeURIComponent를 통해서 만들어진 문자열을 이스케이핑을 이용하여 디코드
+   * @param {string} v
+   */
   decode(v) {
     if (v === undefined)
       return null
@@ -32,9 +32,9 @@ export default class CmQsUtil {
   }
 
   /**
-     * 문자열로의 유형 변환을 사용한 uri 문자열 인코딩
-     * @param {string} v
-     */
+   * 문자열로의 유형 변환을 사용한 uri 문자열 인코딩
+   * @param {string} v
+   */
   encode(v) {
     switch (typeof v) {
       case 'string':
@@ -57,17 +57,17 @@ export default class CmQsUtil {
   }
 
   /**
-     * 쿼리문자열을 분석하여 값 또는 객체로 반환
-     * @param {string} [key] - querysting key
-     * @param {any} [defaultValue] key값에 해당하는 값이 없을 경우 설정할 초기 값.
-     * @returns {string | Object}
-     * @example
-     * // === url: https://devm-wkdgur1380.club5678.com/?arr=1&arr=2&sSex=f
-     * get(); // => {arr: ['1', '2'], sSex: 'f'}
-     * get('sSex'); // => 'f'
-     * get('nothing'); // => undefined
-     * get('nothing', 'hi'); // => 'hi'
-     */
+   * 쿼리문자열을 분석하여 값 또는 객체로 반환
+   * @param {string} [key] - querysting key
+   * @param {any} [defaultValue] key값에 해당하는 값이 없을 경우 설정할 초기 값.
+   * @returns {string | Object}
+   * @example
+   * // === url: https://devm-wkdgur1380.club5678.com/?arr=1&arr=2&sSex=f
+   * get(); // => {arr: ['1', '2'], sSex: 'f'}
+   * get('sSex'); // => 'f'
+   * get('nothing'); // => undefined
+   * get('nothing', 'hi'); // => 'hi'
+   */
   get(key, defaultValue) {
     if (key) {
       const qsValue = this.parse()[key]
@@ -78,10 +78,10 @@ export default class CmQsUtil {
   }
 
   /**
-     * 프로토타입 속성을 무시하고 모든 개체 속성을 열거
-     * v8에서 최적화 문제를 피하기 위해 열거 키를 캡슐화
-     * @param {Object} obj - input object
-     */
+   * 프로토타입 속성을 무시하고 모든 개체 속성을 열거
+   * v8에서 최적화 문제를 피하기 위해 열거 키를 캡슐화
+   * @param {Object} obj - input object
+   */
   getKeys(obj) {
     const { hasOwnProperty } = Object.prototype
     const list = []
@@ -96,15 +96,15 @@ export default class CmQsUtil {
   }
 
   /**
-     * 쿼리문자열을 분석하여 객체로 반환
-     * @param {string} [str] 구문 분석할 쿼리 문자열이 포함된 문자열
-     * @param {string} [delimiter = '&'] - 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '&'는 쌍 구분자
-     * @param {string} [eq = '='] - key/pair separator.
-     * @returns {Object} parsed object (use as a dictionary)
-     * @example
-     * // === url: https://devm-wkdgur1380.club5678.com/?arr=1&arr=2&sSex=f
-     * parse(); // => {arr: ['1', '2'], sSex: 'f'}
-     */
+   * 쿼리문자열을 분석하여 객체로 반환
+   * @param {string} [str] 구문 분석할 쿼리 문자열이 포함된 문자열
+   * @param {string} [delimiter = '&'] - 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '&'는 쌍 구분자
+   * @param {string} [eq = '='] - key/pair separator.
+   * @returns {Object} parsed object (use as a dictionary)
+   * @example
+   * // === url: https://devm-wkdgur1380.club5678.com/?arr=1&arr=2&sSex=f
+   * parse(); // => {arr: ['1', '2'], sSex: 'f'}
+   */
   parse(str, delimiter, eq) {
     let i
     str = str || window?.location?.search
@@ -174,16 +174,16 @@ export default class CmQsUtil {
   }
 
   /**
-     * 객체 또는 사전 자료형을 string으로 변환
-     * @param {Object} obj 속성을 키/값 문자열로 구문 분석할 개체
-     * @param {string} [delimiter = '&'] 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '&'는 쌍 구분자
-     * @param {string} [eq = '='] 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '='는 쌍 구분자
-     * @returns {string} query string
-     * @example
-     * // === obj: {arr: ['1', '2'], sSex: 'f'}
-     * stringify(obj); // => 'arr=1&arr=2&sSex=f'
-     * stringify(obj, '|', '='); // => 'arr=1|arr=2|sSex=f'
-     */
+   * 객체 또는 사전 자료형을 string으로 변환
+   * @param {Object} obj 속성을 키/값 문자열로 구문 분석할 개체
+   * @param {string} [delimiter = '&'] 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '&'는 쌍 구분자
+   * @param {string} [eq = '='] 정의되지 않은 경우(값 없음) 기본 앰퍼샌드 '='는 쌍 구분자
+   * @returns {string} query string
+   * @example
+   * // === obj: {arr: ['1', '2'], sSex: 'f'}
+   * stringify(obj); // => 'arr=1&arr=2&sSex=f'
+   * stringify(obj, '|', '='); // => 'arr=1|arr=2|sSex=f'
+   */
   stringify(obj, delimiter, eq) {
     delimiter = delimiter || '&'
     eq = eq || '=' // sanity check

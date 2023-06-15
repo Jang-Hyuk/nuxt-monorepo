@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "main": "index.js",
   "private": true,
-  "dependencies": {},
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",
     "eslint": "^8.39.0",
     "eslint-config-turbo": "latest",
+    "eslint-plugin-jsdoc": "^46.2.6",
     "typescript": "^5.0.4"
   },
   "publishConfig": {

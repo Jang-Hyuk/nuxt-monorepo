@@ -1,0 +1,12 @@
+{
+  "name": "@nm/utils",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@nm/tsconfig": "workspace:^",
+    "cookie-universal": "^2.2.2",
+    "dayjs": "^1.11.8",
+    "lodash": "^4.17.21"
+  }
+}

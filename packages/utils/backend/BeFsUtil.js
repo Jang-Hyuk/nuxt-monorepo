@@ -16,9 +16,9 @@ export default class BeFsUtil {
   }
 
   /**
-     * @param {string} dirName Folder 경로
-     * @returns {string[]} 폴더 이름
-     */
+   * @param {string} dirName Folder 경로
+   * @returns {string[]} 폴더 이름
+   */
   static getDirectories(dirName) {
     return fs
       .readdirSync(dirName)
@@ -26,11 +26,11 @@ export default class BeFsUtil {
   }
 
   /**
-     * 지정된 경로안에 존재하는 파일 목록 추출
-     * @param {string} dirPath Folder 경로
-     * @param {string[]=} extList 가져올 확장자 목록
-     * @returns {string[]} 폴더 이름
-     */
+   * 지정된 경로안에 존재하는 파일 목록 추출
+   * @param {string} dirPath Folder 경로
+   * @param {string[]=} extList 가져올 확장자 목록
+   * @returns {string[]} 폴더 이름
+   */
   static getFiles(dirPath, extList = []) {
     return fs
       .readdirSync(dirPath)
@@ -41,11 +41,11 @@ export default class BeFsUtil {
   }
 
   /**
-     * 지정 폴더를 기준으로 app.use 처리. 단 index는 '/'
-     * @param {string} rootPath 실 디렉토리 앞에 붙을 경로
-     * @param {string[]} dirPath 실 디렉토리
-     * @param {number} [omitDepth = 1] 제외하고자 하는 dirPath 깊이
-     */
+   * 지정 폴더를 기준으로 app.use 처리. 단 index는 '/'
+   * @param {string} rootPath 실 디렉토리 앞에 붙을 경로
+   * @param {string[]} dirPath 실 디렉토리
+   * @param {number} [omitDepth = 1] 제외하고자 하는 dirPath 깊이
+   */
   static requireFolder(rootPath, dirPath, omitDepth = 1) {
     const dynamicDirPath = path.resolve(rootPath, ...dirPath)
     // 디렉토리 목록 추출 (테스트 폴더 제외)

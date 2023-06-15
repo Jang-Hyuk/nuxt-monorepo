@@ -90,15 +90,14 @@ export default class CmDeviceUtil {
   }
 
   /**
-     * app 에서는 userAgent 뒤에 쓰이는 정보를 추가로 붙여 보내줌
-     * @param {Object} opt
-     * @param {string} [opt.userAgent = ''] Server: req['user-agent'], Client: navigator.userAgent
-     */
+   * app 에서는 userAgent 뒤에 쓰이는 정보를 추가로 붙여 보내줌
+   * @param {Object} opt
+   * @param {string} [opt.userAgent = ''] Server: req['user-agent'], Client: navigator.userAgent
+   */
   constructor(opt = {}) {
     const { userAgent = '' } = opt
 
     this.userAgent = userAgent
-    const { qsUtil, stringUtil } = opt
     this.init()
   }
 
@@ -112,10 +111,10 @@ export default class CmDeviceUtil {
   }
 
   /**
-     * 데이터 초기화
-     * @param {Object} opt
-     * @param {import('http').IncomingHttpHeaders['user-agent'] | Navigator['userAgent']} opt.userAgent Server: req['user-agent'], Client: navigator.userAgent
-     */
+   * 데이터 초기화
+   * @param {Object} opt
+   * @param {import('http').IncomingHttpHeaders['user-agent'] | Navigator['userAgent']} opt.userAgent Server: req['user-agent'], Client: navigator.userAgent
+   */
   init(userAgent = this.userAgent) {
     this.userAgent = userAgent
     this.#updatePlatform()
