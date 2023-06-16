@@ -2,6 +2,15 @@
   "root": true,
   // This tells ESLint to load the config from the package `eslint`
   "extends": ["@nm/eslint-config-antfu"],
+  "rules": {
+    "vue/component-name-in-template-casing": [
+      "error",
+      "PascalCase",
+      {
+        "registeredComponentsOnly": false
+      }
+    ]
+  },
   "settings": {
     "next": {
       "rootDir": ["apps/*/"]
