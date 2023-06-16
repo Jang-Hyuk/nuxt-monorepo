@@ -12,8 +12,8 @@ export default defineNuxtComponent({
     <NuxtLink :to="{ name: 'page-id', params: { id: 1 } }">
       동적 페이지로 쑝
     </NuxtLink>
-    <NuxtLink to="">
-      dd
+    <NuxtLink to="/aws/upload">
+      AWS
     </NuxtLink>
   </div>
 </template>

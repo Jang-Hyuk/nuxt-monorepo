@@ -1,10 +1,12 @@
 <script setup lang="ts">
-
+definePageMeta({
+  layout: 'aws-layout',
+})
 </script>
 
 <template>
   <div>
-    안녕 AWS
+    다운로드
   </div>
 </template>
 
