@@ -2,19 +2,6 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 export default class BeFsUtil {
-  static bindWatchHMR() {
-    const beSrcPath = path.resolve(process.cwd(), 'Backend')
-    const feSrcPath = path.resolve(process.cwd(), 'Frontend');
-
-    [['middleware'], ['routes'], ['models'], ['services'], ['common']].forEach(dirName =>
-      BeFsUtil.requireFolder(beSrcPath, dirName),
-    );
-
-    [['_global']].forEach(dirName =>
-      BeFsUtil.requireFolder(feSrcPath, dirName),
-    )
-  }
-
   /**
    * @param {string} dirName Folder 경로
    * @returns {string[]} 폴더 이름

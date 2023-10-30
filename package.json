@@ -17,6 +17,6 @@
     "@nm/eslint-config-antfu": "workspace:*",
     "@nm/stylelint-config": "workspace:^",
     "lodash": "^4.17.21",
-    "turbo": "^1.10.3"
+    "turbo": "^1.10.16"
   }
 }
