@@ -13,6 +13,6 @@
   "devDependencies": {
     "@nm/ui": "workspace:^",
     "@nm/tsconfig": "workspace:^",
-    "nuxt": "^3.4.3"
+    "nuxt": "^3.8.0"
   }
 }

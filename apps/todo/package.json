@@ -13,7 +13,7 @@
   "devDependencies": {
     "@nm/tsconfig": "workspace:^",
     "@nm/ui": "workspace:^",
-    "@pinia/nuxt": "^0.4.9",
-    "nuxt": "^3.4.3"
+    "@pinia/nuxt": "^0.5.1",
+    "nuxt": "^3.8.0"
   }
 }

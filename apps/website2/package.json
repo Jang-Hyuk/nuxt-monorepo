@@ -11,8 +11,8 @@
     "lint:fix": "eslint --fix ."
   },
   "devDependencies": {
-    "@nm/ui": "workspace:^",
     "@nm/tsconfig": "workspace:^",
-    "nuxt": "^3.4.3"
+    "@nm/ui": "workspace:^",
+    "nuxt": "^3.8.0"
   }
 }
